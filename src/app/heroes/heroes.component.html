@@ -1,0 +1,12 @@
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <!-- 
+    O *ngFor é de Angular repetidor directiva. Ele repete o 
+    elemento do host para cada elemento em uma lista.
+  -->
+  <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
